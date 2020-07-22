@@ -1,0 +1,15 @@
+<div class="cocktail-info">
+  <strong>Name:</strong> <%= @cocktail.name %>
+  <br>
+  <strong>Ingredients:</strong> <%= @cocktail.ingredients.name %>
+</div>
+<br>
+<div class="links">
+  <div class="return-to-root">
+    <%= link_to "Edit this cocktail", edit_cocktail_path %>
+    <br>
+    <%= link_to("Delete this cocktail", cocktail_path(@cocktail), method: :delete) %>
+    <br>
+    <%= link_to "Return to cocktail list", root_path %>
+  </div>
+</div>

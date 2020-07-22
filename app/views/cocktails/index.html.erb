@@ -1,4 +1,14 @@
-<% @cocktails.each do |cocktail| %>
-  <%= p cocktail.name %>
-  <%= p cocktail.ingredient %>
+<h1><strong>Cocktails</strong></h1>
+
+<% if @cocktails.any? %>
+  <ul><% @cocktails.each do |cocktail| %>
+    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+  <% end %>
+  </ul>
+<% else %>
+  You have no cocktails, click below to add one!
 <% end %>
+<br>
+<br>
+
+<%= link_to "Create a new cocktail", new_cocktail_path %>
