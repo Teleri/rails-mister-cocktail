@@ -1,4 +1,9 @@
-<%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit, "Add cocktail", class: "btn btn-primary" %>
+  <% end %>
+  <div class="cancel-btn" style="margin-top: 10px;">
+    <%= link_to "Cancel", :back, class: "btn btn-secondary" %>
+  </div>
+</div>

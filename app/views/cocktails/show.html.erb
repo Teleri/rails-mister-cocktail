@@ -1,15 +1,27 @@
-<div class="cocktail-info">
-  <strong>Name:</strong> <%= @cocktail.name %>
+<div class="container">
+  <div class="cocktail-info">
+    <div class="cocktail-name">
+      <strong>Name:</strong> <%= @cocktail.name %>
+    </div>
+    <div class="cocktail-ingredients">
+      <strong>Ingredients:</strong> <% @cocktail.doses.each do |d| %>
+      <ul>
+        <li>
+          <%= d.ingredient.name %> - 
+          <%= d.description %>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+  </div>
   <br>
-  <strong>Ingredients:</strong> <%= @cocktail.ingredients.name %>
-</div>
-<br>
-<div class="links">
-  <div class="return-to-root">
-    <%= link_to "Edit this cocktail", edit_cocktail_path %>
-    <br>
-    <%= link_to("Delete this cocktail", cocktail_path(@cocktail), method: :delete) %>
-    <br>
-    <%= link_to "Return to cocktail list", root_path %>
+  <div class="links" style="display: flex; justify-content: space-evenly">
+    <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+    <br><br>
+    <%= link_to "Edit this cocktail", edit_cocktail_path, class: "btn btn-secondary" %>
+    <br><br>
+    <%= link_to("Delete this cocktail", cocktail_path(@cocktail), method: :delete, class: "btn btn-danger", data: { confirm: 'Are you sure?' }) %>
+    <br><br>
+    <%= link_to "Return to cocktail list", root_path, class: "btn btn-primary" %>
   </div>
 </div>
