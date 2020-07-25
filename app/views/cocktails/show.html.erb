@@ -4,11 +4,12 @@
       <strong>Name:</strong> <%= @cocktail.name %>
     </div>
     <div class="cocktail-ingredients">
-      <strong>Ingredients:</strong> <% @cocktail.doses.each do |d| %>
+      <strong>Ingredients:</strong> <% @cocktail.doses.each do |dose| %>
       <ul>
         <li>
-          <%= d.ingredient.name %> - 
-          <%= d.description %>
+          <%= dose.ingredient.name %> - 
+          <%= dose.description %>
+          <%= link_to '<i class="fas fa-trash-alt" aria-hidden="true"></i>'.html_safe, cocktail_dose_path(@cocktail, dose), method: :delete, class: 'trash-icon', data: { confirm: 'Are you sure?' } %>
         </li>
       </ul>
       <% end %>
