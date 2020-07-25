@@ -15,9 +15,12 @@
       <% end %>
     </div>
   </div>
+  <div id="new-dose-form" hidden>
+    <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
+  </div>
   <br>
   <div class="links" style="display: flex; justify-content: space-evenly">
-    <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+    <button class="btn btn-primary" id="show-new-dose-form">Add new dose</button>
     <br><br>
     <%= link_to "Edit this cocktail", edit_cocktail_path, class: "btn btn-secondary" %>
     <br><br>

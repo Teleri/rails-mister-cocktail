@@ -7,14 +7,19 @@ class CocktailsController < ApplicationController
 
   def show
     # code
+    @dose = Dose.new
   end
 
   def new
     @cocktail = Cocktail.new
+    @dose = Dose.new
   end
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
+    @cocktail = Cocktail.find(params[:cocktail_id])
+    @dose = Dose.new
+    @dose.cocktail = @cocktail
     @cocktail.save!
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
