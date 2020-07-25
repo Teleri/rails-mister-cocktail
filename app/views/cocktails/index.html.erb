@@ -1,14 +1,23 @@
-<h1><strong>Cocktails</strong></h1>
-
-<% if @cocktails.any? %>
-  <ul><% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-  <% end %>
-  </ul>
-<% else %>
-  You have no cocktails, click below to add one!
-<% end %>
-<br>
-<br>
-
-<%= link_to "Create a new cocktail", new_cocktail_path %>
+<div class="container">
+  <div class="cocktail-master">
+    <h1><strong>Cocktails</strong></h1>
+    <div class="cocktail-list">
+      <% if @cocktails.any? %>
+        <div class="row">
+          <% @cocktails.each do |cocktail| %>
+          <div class="col-3">
+            <div class="cocktail-card" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<%= cl_image_path cocktail.photo.key, height: 200, width: 200, crop: :fill %>');">
+              <%= link_to cocktail.name, cocktail_path(cocktail), class: "cocktail-details"%>
+            </div>
+          </div>
+        <% end %>
+        </div>
+      <% else %>
+        <p>You have no cocktails, click below to add one!</p>
+      <% end %>
+     </div>
+      <div class="button">
+        <%= link_to "Create a new cocktail", new_cocktail_path, class: "btn btn-outline-info" %>
+      </div>
+    </div>
+</div>

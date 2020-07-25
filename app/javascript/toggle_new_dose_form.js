@@ -12,5 +12,5 @@ export function addToggleButton() {
 
 export function cancelButton() {
   const newDoseBtn = document.querySelector("#cancel-button");
-  cancelButton.addEventListener('click', showNewDoseForm);
+  newDoseBtn.addEventListener('click', showNewDoseForm);
 };

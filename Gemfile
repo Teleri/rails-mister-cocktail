@@ -25,6 +25,7 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.13.0'
 gem 'simple_form'
 gem 'jquery-rails'
+gem 'cloudinary', '~> 1.12.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
