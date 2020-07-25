@@ -17,7 +17,6 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
-    # @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
     @dose.cocktail = @cocktail
     @cocktail.save!
