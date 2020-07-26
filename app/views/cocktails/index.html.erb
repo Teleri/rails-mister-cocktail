@@ -7,8 +7,10 @@
       <% @cocktails.each do |cocktail| %>
       <div class="col-md-4">
         <%= link_to cocktail_path(cocktail), action: 'go' do %>
-          <div class="cocktail-card" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 300, crop: :scale %>');">
-            <%= cocktail.name %>
+          <div class="cocktail-card" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 300, crop: :scale %>');">
+            <div class="cocktail-name">
+              <%= cocktail.name %>
+            </div>
           </div>
         <% end %>
       </div>
